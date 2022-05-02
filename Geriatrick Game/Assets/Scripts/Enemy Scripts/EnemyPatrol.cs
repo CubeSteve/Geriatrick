@@ -111,7 +111,6 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player dead");
             collision.gameObject.GetComponent<CharacterController2D>().respawn();
         }
     }

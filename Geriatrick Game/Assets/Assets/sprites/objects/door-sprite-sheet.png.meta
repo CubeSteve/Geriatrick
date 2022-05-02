@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 3ea3731712571634fac1901c7428629f
+guid: 721cd3db135e2e3438ccacfc2e5650d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2475085277550681787
-    second: paintings-sheet_0
+      213: -6289318075483929108
+    second: door-sprite-sheet_0
   - first:
-      213: -766222375816486868
-    second: paintings-sheet_1
+      213: -1308699027445326612
+    second: door-sprite-sheet_1
+  - first:
+      213: 5554088705301700944
+    second: door-sprite-sheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paintings-sheet_0
+      name: door-sprite-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,20 +108,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 541eacabd0bb6add0800000000000000
-      internalID: -2475085277550681787
+      spriteID: ce54657588ad7b8a0800000000000000
+      internalID: -6289318075483929108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paintings-sheet_1
+      name: door-sprite-sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -126,14 +129,35 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c20a08e0fc4dd55f0800000000000000
-      internalID: -766222375816486868
+      spriteID: cecd8371b2196dde0800000000000000
+      internalID: -1308699027445326612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door-sprite-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051648a2046141d40800000000000000
+      internalID: 5554088705301700944
       vertices: []
       indices: 
       edges: []
