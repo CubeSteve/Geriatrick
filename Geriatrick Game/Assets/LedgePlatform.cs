@@ -14,9 +14,9 @@ public class LedgePlatform : MonoBehaviour
 
     IEnumerator FallTimer()
     {
-        GetComponent<BoxCollider2D>().enabled = false;
-        yield return new WaitForSeconds(0.5f);
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<EdgeCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.35f);
+        GetComponent<EdgeCollider2D>().enabled = true;
 
     }
 }
