@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
@@ -8,11 +10,16 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject right;
     public float speed = 20f;
     public bool startLeft = true;
+    public float idleLength = 1;
 
     private Rigidbody2D rigidbody2D;
     private float horizontalMove = 0f; // = 1- for left, 1 for right
     private Vector3 velocity = Vector3.zero;
     private float movementSmoothing = .05f; // How much to smooth out the movement
+    private bool facing_right;
+    private bool isIdle = false;
+    private float idleTimer = 0;
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
@@ -48,18 +55,55 @@ public class EnemyPatrol : MonoBehaviour
         if (horizontalMove > 0)
         {
             //Moving right
-            if (gameObject.transform.position.x > right.transform.position.x)
+            if (transform.position.x >= right.transform.position.x)
             {
-                horizontalMove = -1f * speed;
+                setIdle();
             }
         }
         else if (horizontalMove < 0)
         {
             //Moving left
-            if (gameObject.transform.position.x < left.transform.position.x)
+            if (transform.position.x <= left.transform.position.x)
             {
-                horizontalMove = 1f * speed;
+                setIdle();
             }
         }
+
+        idleTimer -= Time.deltaTime;
+        if (idleTimer <= 0.0f && isIdle)
+        {
+            SwitchDirection();
+        }
+    }
+
+    private void setIdle()
+    {
+        if (!isIdle)
+        {
+            anim.SetBool("isWalking", false);
+            idleTimer = idleLength;
+        }
+        isIdle = true;
+    }
+
+    private void SwitchDirection()
+    {
+        anim.SetBool("isWalking", true);
+        speed = -speed;
+        horizontalMove = speed;
+        idleTimer = idleLength;
+        FlipSprite();
+        isIdle = false;
+    }
+
+    public void FlipSprite()
+    {
+        // Switch the way the player is labelled as facing.
+        facing_right = !facing_right;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }
