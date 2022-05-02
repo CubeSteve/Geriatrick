@@ -106,4 +106,13 @@ public class EnemyPatrol : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("player dead");
+            collision.gameObject.GetComponent<CharacterController2D>().respawn();
+        }
+    }
 }

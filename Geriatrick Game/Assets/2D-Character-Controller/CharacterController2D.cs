@@ -32,7 +32,7 @@ public class CharacterController2D : MonoBehaviour
     public PlayerMovement playerMovement;
 
 	private List<BoxCollider2D> boxColliders = new List<BoxCollider2D>();
-
+    private Vector3 spawnLocation;
 
 
 	[Header("Events")]
@@ -48,7 +48,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
-
+        spawnLocation = transform.position;
 
         m_JumpForce = 500f;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -83,6 +83,11 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 	}
+
+    public void respawn()
+    {
+        transform.position = spawnLocation;
+    }
 
     public void setUpRat(bool isRat)
     {

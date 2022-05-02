@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     bool isRat = false;
     public bool ceilingAbove = false;
 	public AudioClip jerryFootsteps;
-	
+
+
 	void AudioManagement ()
 	{
 		if (anim.GetCurrentAnimatorStateInfo (0).IsName("Player_Run"))
