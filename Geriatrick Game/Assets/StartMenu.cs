@@ -19,7 +19,7 @@ public class StartMenu : MonoBehaviour
         if(Input.GetKey(KeyCode.Return) && inMenu)
         {
             startMenuCanvas.SetActive(false);
-            uiCanvas.SetActive(true);
+            //uiCanvas.SetActive(true);
             inMenu = false;
         }
     }

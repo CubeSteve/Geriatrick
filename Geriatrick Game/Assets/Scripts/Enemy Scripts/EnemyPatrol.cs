@@ -111,6 +111,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<CharacterController2D>().respawn();
         }
     }

@@ -11,6 +11,7 @@ public class LootPickup : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<GameData>().lootCounter += lootValue;
+            other.GetComponent<GameData>().coinPickup.Play();
             Destroy(this.gameObject);
         }
     }
