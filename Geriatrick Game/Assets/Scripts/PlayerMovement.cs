@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     bool isRat = false;
     public bool ceilingAbove = false;
 	public AudioClip jerryFootsteps;
+    public bool inBarrel = false;
 
 
 	void AudioManagement ()
@@ -60,7 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        if(!inBarrel)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        }
         jump = false;
     }
 
